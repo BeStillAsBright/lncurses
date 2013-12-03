@@ -25,6 +25,15 @@ static int lnc_quit(lua_State *L)
 	return 0;
 }
 
+// lncurses.stdscr() -> lncurses.Window
+static int lnc_stdscr(lua_State *L)
+{
+	WINDOW **l_stdscr = lua_newuserdata(L, sizeof(*l_stdscr));
+	*l_stdscr = stdscr;
+	luaL_setmetatable(L, LNC_STDSCR_MT);
+	return 1;
+}
+
 // lncurses.nl(on: boolean)
 static int lnc_nl(lua_State *L)
 {
