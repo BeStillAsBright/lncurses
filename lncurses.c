@@ -87,6 +87,7 @@ static int lnc_halfdelay(lua_State *L)
 	return 0;
 }
 
+// lncurses.qiflush(on: boolean)
 static int lnc_qiflush(lua_State *L)
 {
 	luaL_checktype(L, -1, LUA_TBOOLEAN);
@@ -106,6 +107,7 @@ static int lnc_lines(lua_State *L)
 	return 1;
 }
 
+// lncurses.cols() -> int
 static int lnc_cols(lua_State *L)
 {
 	lua_pushinteger(L, COLS);
