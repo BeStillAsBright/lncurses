@@ -99,6 +99,19 @@ static int lnc_qiflush(lua_State *L)
 	return 0;
 }
 
+// lncurses.lines() -> int
+static int lnc_lines(lua_State *L)
+{
+	lua_pushinteger(L, LINES);
+	return 1;
+}
+
+static int lnc_cols(lua_State *L)
+{
+	lua_pushinteger(L, COLS);
+	return 1;
+}
+
 static luaL_Reg lnc_module_fns[] = {
 	{"init", &lnc_init},
 	{"quit", &lnc_quit},
@@ -108,6 +121,8 @@ static luaL_Reg lnc_module_fns[] = {
 	{"raw", &lnc_raw},
 	{"halfdelay", &lnc_halfdelay},
 	{"qiflush", &lnc_qiflush},
+	{"lines", &lnc_lines},
+	{"cols", &lnc_cols},
 	{NULL, NULL}
 };
 
