@@ -1,4 +1,4 @@
-lua-ncurses
+lncurses
 ===========
 
 Lua bindings for ncurses.
