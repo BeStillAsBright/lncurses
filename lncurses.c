@@ -126,6 +126,7 @@ static int lnc_cols(lua_State *L)
 static luaL_Reg lnc_module_fns[] = {
 	{"init", &lnc_init},
 	{"quit", &lnc_quit},
+	{"stdscr", &lnc_stdscr},
 	{"nl", &lnc_nl},
 	{"cbreak", &lnc_cbreak},
 	{"echo", &lnc_echo},
